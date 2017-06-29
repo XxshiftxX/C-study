@@ -25,8 +25,7 @@ int search(int key)
 main(){
 	printf("Hello world!\n");
 	printf("\n\n크큿.... 나에 프로그램으로의 출입을 『허가』한다....\n\n\n");
-	int i,j,k;
-	short kor = 0;
+	int i;
 	
 	RE_ZERO_KARA_HAZIMERU_TANSAKU_SEKATSU:
 	leng = 0;
@@ -49,45 +48,8 @@ main(){
 				break;
 			}
 		}
-			
-		if(kor)
-		{
-			switch(i){
-			case 0:
-				printf("자... 먼저 첫");
-				break;
-			case 1:
-				printf("두"); 
-				break;
-			case 2:
-				printf("세");
-				break;
-			case 3:
-				printf("네");
-				break;
-			case 4:
-				printf("다섯");
-				break;
-			case 5:
-				printf("여섯");
-				break;
-			case 6:
-				printf("일곱");
-				break;
-			case 7:
-				printf("여덟");
-				break;
-			case 8:
-				printf("아홉");
-				break;
-			case 9:
-				printf("열");        
-				break;
-			}
-		} else {
-			printf("%d", i+1);
-		}
-		printf("번째 『원소』를 입력해라....  \n");
+		
+		printf("%d번째 『원소』를 입력해라....  \n", i+1);
 		int input;
 		scanf("%d", &input);
 		
@@ -101,7 +63,14 @@ main(){
 			printf("『상대』 주문이 활성화되었다.");
 			kor++;
 			goto RE_ZERO_KARA_HAZIMERU_TANSAKU_SEKATSU;
-		} 
+		}
+		
+		if(input < 0)
+		{
+			printf("너무 작은 원소는 『입력』할 수 없네...\n");
+			i--;
+			continue;
+		}
 		if(input < arr[i-1])
 		{
 			printf("이런... 이건 『정렬』되지 않은 원소가 아닌가...\n");
